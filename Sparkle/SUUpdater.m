@@ -447,16 +447,23 @@ static NSString *const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefaults
 
     // A value in the user defaults overrides one in the Info.plist (so preferences panels can be created wherein users choose between beta / release feeds).
     NSString *appcastString = [self.host objectForKey:SUFeedURLKey];
-    if ([self.delegate respondsToSelector:@selector(feedURLStringForUpdater:)])
-        appcastString = [self.delegate feedURLStringForUpdater:self];
     if (!appcastString) // Can't find an appcast string!
-        [NSException raise:@"SUNoFeedURL" format:@"You must specify the URL of the appcast as the %@ key in either the Info.plist or the user defaults!", SUFeedURLKey];
+        [NSException raise:@"SUNoFeedURL" format:@"You must specify the URL of the github repo as the %@ key in either the Info.plist or the user defaults!", SUFeedURLKey];
     NSCharacterSet *quoteSet = [NSCharacterSet characterSetWithCharactersInString:@"\"\'"]; // Some feed publishers add quotes; strip 'em.
     NSString *castUrlStr = [appcastString stringByTrimmingCharactersInSet:quoteSet];
-    if (!castUrlStr || [castUrlStr length] == 0)
+  if (!castUrlStr || [castUrlStr length] == 0) {
         return nil;
-    else
-        return [NSURL URLWithString:castUrlStr];
+  } else {
+    if ([castUrlStr rangeOfString:@"https://github.com/"].location == NSNotFound) {
+      [NSException raise:@"SUNoFeedURL" format:@"You must specify the URL of the github repo as the %@ key in either the Info.plist or the user defaults!", SUFeedURLKey];
+      return nil;
+    } else {
+      NSString *githubAPI = [castUrlStr stringByReplacingOccurrencesOfString:@"https://github.com/" withString:@"https://api.github.com/repos/"];
+      githubAPI = [githubAPI stringByAppendingString:@"/releases/latest"];
+      return [NSURL URLWithString:githubAPI];
+    }
+    
+  }
 }
 
 - (NSString *)userAgentString
@@ -478,49 +485,12 @@ static NSString *const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefaults
 
 - (BOOL)sendsSystemProfile
 {
-    return [self.host boolForKey:SUSendProfileInfoKey];
+    return NO; // Never send system profile to github
 }
 
 - (NSURL *)parameterizedFeedURL
 {
-    NSURL *baseFeedURL = [self feedURL];
-
-    // Determine all the parameters we're attaching to the base feed URL.
-    BOOL sendingSystemProfile = [self sendsSystemProfile];
-
-    // Let's only send the system profiling information once per week at most, so we normalize daily-checkers vs. biweekly-checkers and the such.
-    NSDate *lastSubmitDate = [self.host objectForUserDefaultsKey:SULastProfileSubmitDateKey];
-    if (!lastSubmitDate) {
-        lastSubmitDate = [NSDate distantPast];
-    }
-    const NSTimeInterval oneWeek = 60 * 60 * 24 * 7;
-    sendingSystemProfile &= (-[lastSubmitDate timeIntervalSinceNow] >= oneWeek);
-
-    NSArray *parameters = @[];
-    if ([self.delegate respondsToSelector:@selector(feedParametersForUpdater:sendingSystemProfile:)]) {
-        parameters = [parameters arrayByAddingObjectsFromArray:[self.delegate feedParametersForUpdater:self sendingSystemProfile:sendingSystemProfile]];
-    }
-	if (sendingSystemProfile)
-	{
-        parameters = [parameters arrayByAddingObjectsFromArray:[self.host systemProfile]];
-        [self.host setObject:[NSDate date] forUserDefaultsKey:SULastProfileSubmitDateKey];
-    }
-	if ([parameters count] == 0) { return baseFeedURL; }
-
-    // Build up the parameterized URL.
-    NSMutableArray *parameterStrings = [NSMutableArray array];
-    for (NSDictionary *currentProfileInfo in parameters) {
-        [parameterStrings addObject:[NSString stringWithFormat:@"%@=%@", [[currentProfileInfo[@"key"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], [[currentProfileInfo[@"value"] description] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-    }
-
-    NSString *separatorCharacter = @"?";
-    if ([baseFeedURL query]) {
-        separatorCharacter = @"&"; // In case the URL is already http://foo.org/baz.xml?bat=4
-    }
-    NSString *appcastStringWithProfile = [NSString stringWithFormat:@"%@%@%@", [baseFeedURL absoluteString], separatorCharacter, [parameterStrings componentsJoinedByString:@"&"]];
-
-    // Clean it up so it's a valid URL
-    return [NSURL URLWithString:appcastStringWithProfile];
+    return [self feedURL];
 }
 
 - (void)setUpdateCheckInterval:(NSTimeInterval)updateCheckInterval

@@ -70,7 +70,7 @@
         }
     }
 
-    [request setValue:@"application/rss+xml,*/*;q=0.1" forHTTPHeaderField:@"Accept"];
+    //[request setValue:@"application/rss+xml,*/*;q=0.1" forHTTPHeaderField:@"Accept"];
 
     self.download = [[NSURLDownload alloc] initWithRequest:request delegate:self];
 }
@@ -98,13 +98,13 @@
     BOOL failed = NO;
     NSArray *xmlItems = nil;
     NSMutableArray *appcastItems = [NSMutableArray array];
+    NSDictionary *json;
 
 	if (self.downloadFilename)
 	{
-        NSUInteger options = 0;
-        options = NSXMLNodeLoadExternalEntitiesSameOriginOnly;
-        document = [[NSXMLDocument alloc] initWithContentsOfURL:[NSURL fileURLWithPath:self.downloadFilename] options:options error:&error];
-
+    NSData *fileContent = [NSData dataWithContentsOfFile:self.downloadFilename];
+    json = [NSJSONSerialization JSONObjectWithData:fileContent options:0 error:&error];
+    
         [[NSFileManager defaultManager] removeItemAtPath:self.downloadFilename error:nil];
         self.downloadFilename = nil;
 	}
@@ -113,17 +113,9 @@
         failed = YES;
     }
 
-    if (nil == document)
+    if (nil == json)
     {
         failed = YES;
-    }
-    else
-    {
-        xmlItems = [document nodesForXPath:@"/rss/channel/item" error:&error];
-        if (nil == xmlItems)
-        {
-            failed = YES;
-        }
     }
 
 	if (failed == NO)

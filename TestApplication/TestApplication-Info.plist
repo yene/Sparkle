@@ -22,22 +22,18 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>SUEnableSystemProfiling</key>
-	<true/>
 	<key>SUFeedURL</key>
-	<string>http://sparkle-project.org/files/sparkletestcast.xml</string>
-	<key>SUPublicDSAKeyFile</key>
-	<string>test_app_only_dsa_pub.pem</string>
+	<string>https://github.com/yene/Spotify-Video</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
 			<key>sparkle-project.org</key>
 			<dict>
-			  <key>NSIncludesSubdomains</key>
-			  <false/>
-			  <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-			  <true/>
+				<key>NSIncludesSubdomains</key>
+				<false/>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
 			</dict>
 		</dict>
 	</dict>
