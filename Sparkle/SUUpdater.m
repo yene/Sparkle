@@ -460,6 +460,7 @@ static NSString *const SUUpdaterDefaultsObservationContext = @"SUUpdaterDefaults
     } else {
       NSString *githubAPI = [castUrlStr stringByReplacingOccurrencesOfString:@"https://github.com/" withString:@"https://api.github.com/repos/"];
       githubAPI = [githubAPI stringByAppendingString:@"/releases/latest"];
+      githubAPI = [githubAPI stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
       return [NSURL URLWithString:githubAPI];
     }
     
