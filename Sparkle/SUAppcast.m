@@ -15,6 +15,9 @@
 #import "SUConstants.h"
 #import "SULog.h"
 
+#import <MMMarkdown/MMMarkdown.h>
+
+
 @interface NSXMLElement (SUAppcastExtensions)
 @property (readonly, copy) NSDictionary *attributesAsDictionary;
 @end
@@ -114,7 +117,8 @@
     NSDictionary *zipFile = json[@"assets"][0];
     NSString *version = [json[@"tag_name"] stringByReplacingOccurrencesOfString:@"v" withString:@""];
     
-    NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><p>%@</p>", json[@"name"], json[@"body"]];
+    NSString *bodyHTML = [MMMarkdown HTMLStringWithMarkdown:json[@"body"] error:&error];
+    NSString *html = [NSString stringWithFormat:@"<p style=\"font-size: 16px; font-weight: bold;\">%@</p><p>%@</p>", json[@"name"], bodyHTML];
     
     NSString *xmlContent = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
     "<rss version=\"2.0\" xmlns:sparkle=\"http://www.andymatuschak.org/xml-namespaces/sparkle\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n"
