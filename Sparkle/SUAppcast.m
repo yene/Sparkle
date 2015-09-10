@@ -98,13 +98,55 @@
     BOOL failed = NO;
     NSArray *xmlItems = nil;
     NSMutableArray *appcastItems = [NSMutableArray array];
-    NSDictionary *json;
 
 	if (self.downloadFilename)
 	{
+    // convert json to xml
     NSData *fileContent = [NSData dataWithContentsOfFile:self.downloadFilename];
-    json = [NSJSONSerialization JSONObjectWithData:fileContent options:0 error:&error];
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:fileContent options:0 error:&error];
     
+    // convert ISO 8601 to RFC1123
+    NSDate *dateISO = [NSDate dateWithNaturalLanguageString:json[@"published_at"]];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"EE, d LLLL yyyy HH:mm:ss Z"];
+    NSString *dateRFC = [dateFormat stringFromDate:dateISO];
+    
+    NSDictionary *download = json[@"assets"][0];
+    NSString *version = [json[@"tag_name"] stringByReplacingOccurrencesOfString:@"v" withString:@""];
+    
+    NSString *xmlContent = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
+    "<rss version=\"2.0\" xmlns:sparkle=\"http://www.andymatuschak.org/xml-namespaces/sparkle\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n"
+    "<channel>\n"
+    "<title>Github Sparkle</title>\n"
+      "<link>http://sparkle-project.org/files/sparkletestcast.xml</link>\n"
+      "<description>Most recent changes with links to updates.</description>\n"
+      "<language>en</language>\n"
+      "<item>\n"
+      "<title>%@</title>\n"
+        "<description>\n"
+        "<![CDATA[\n"
+                "%@"
+        "]]>"
+        "</description>\n"
+        "<pubDate>%@</pubDate>\n"
+        "<enclosure url=\"%@\" sparkle:version=\"%@\" length=\"%@\" type=\"application/octet-stream\" />\n"
+        "</item>\n"
+        
+        "</channel>\n"
+        "</rss>\n",
+                            json[@"name"],
+                            json[@"body"],
+                            dateRFC,
+                            download[@"browser_download_url"],
+                            version,
+                            download[@"size"]
+                            ];
+    
+    
+        NSUInteger options = 0;
+        options = NSXMLNodeOptionsNone;
+        document = [[NSXMLDocument alloc] initWithXMLString:xmlContent options:options error:&error];
+
         [[NSFileManager defaultManager] removeItemAtPath:self.downloadFilename error:nil];
         self.downloadFilename = nil;
 	}
@@ -113,9 +155,17 @@
         failed = YES;
     }
 
-    if (nil == json)
+    if (nil == document)
     {
         failed = YES;
+    }
+    else
+    {
+        xmlItems = [document nodesForXPath:@"/rss/channel/item" error:&error];
+        if (nil == xmlItems)
+        {
+            failed = YES;
+        }
     }
 
 	if (failed == NO)
