@@ -106,13 +106,15 @@
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:fileContent options:0 error:&error];
     
     // convert ISO 8601 to RFC1123
-    NSDate *dateISO = [NSDate dateWithNaturalLanguageString:json[@"published_at"]];
+    NSDate *dateISO = [NSDate dateWithNaturalLanguageString:(NSString *)json[@"published_at"]];
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"EE, d LLLL yyyy HH:mm:ss Z"];
     NSString *dateRFC = [dateFormat stringFromDate:dateISO];
     
-    NSDictionary *download = json[@"assets"][0];
+    NSDictionary *zipFile = json[@"assets"][0];
     NSString *version = [json[@"tag_name"] stringByReplacingOccurrencesOfString:@"v" withString:@""];
+    
+    NSString *html = [NSString stringWithFormat:@"<h1>%@</h1><p>%@</p>", json[@"name"], json[@"body"]];
     
     NSString *xmlContent = [NSString stringWithFormat:@"<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
     "<rss version=\"2.0\" xmlns:sparkle=\"http://www.andymatuschak.org/xml-namespaces/sparkle\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\">\n"
@@ -135,11 +137,11 @@
         "</channel>\n"
         "</rss>\n",
                             json[@"name"],
-                            json[@"body"],
+                            html,
                             dateRFC,
-                            download[@"browser_download_url"],
+                            zipFile[@"browser_download_url"],
                             version,
-                            download[@"size"]
+                            zipFile[@"size"]
                             ];
     
     
