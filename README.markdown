@@ -11,3 +11,4 @@ An easy-to-use software update framework for Cocoa developers on Github.
 
 ## Todo
 * add nice custom github style to the changelog window
+* only compare the readable version numbers
