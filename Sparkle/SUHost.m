@@ -126,10 +126,15 @@ typedef struct {
 
 - (NSString *__nonnull)version
 {
-    NSString *version = [self.bundle objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
-    if (!version || [version isEqualToString:@""])
-        [NSException raise:@"SUNoVersionException" format:@"This host (%@) has no %@! This attribute is required.", [self bundlePath], (__bridge NSString *)kCFBundleVersionKey];
-    return version;
+  return [self displayVersion];
+}
+
+- (NSString *__nonnull)bundleVersion
+{
+  NSString *version = [self.bundle objectForInfoDictionaryKey:(__bridge NSString *)kCFBundleVersionKey];
+  if (!version || [version isEqualToString:@""])
+    [NSException raise:@"SUNoVersionException" format:@"This host (%@) has no %@! This attribute is required.", [self bundlePath], (__bridge NSString *)kCFBundleVersionKey];
+  return version;
 }
 
 - (NSString *__nonnull)displayVersion
@@ -138,7 +143,7 @@ typedef struct {
     if (shortVersionString)
         return shortVersionString;
     else
-        return [self version]; // Fall back on the normal version string.
+        return [self bundleVersion]; // Fall back on the normal version string.
 }
 
 - (NSImage *__nonnull)icon

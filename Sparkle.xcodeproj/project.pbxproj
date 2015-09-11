@@ -2120,6 +2120,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "@executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-Wl,-U,_NSURLQuarantinePropertiesKey",
+					"-ObjC",
+				);
 			};
 			name = Debug;
 		};
@@ -2127,6 +2132,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA1941D50D94A70100DD942E /* ConfigFrameworkRelease.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "@executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-Wl,-U,_NSURLQuarantinePropertiesKey",
+					"-ObjC",
+				);
 			};
 			name = Release;
 		};
