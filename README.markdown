@@ -3,6 +3,9 @@
 An easy-to-use software update framework for Cocoa developers on Github.
 
 
+![github](github.png)
+![sign](sign.png)
+
 ## Differences from Sparkle
 * It uses the Version instead of Build number.
 * The Github version can contain a "v".
