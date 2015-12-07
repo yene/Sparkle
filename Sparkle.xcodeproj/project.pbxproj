@@ -178,7 +178,7 @@
 		767B61AC1972D488004E0C3C /* SUGuidedPackageInstaller.h in Headers */ = {isa = PBXBuildFile; fileRef = 767B61AA1972D488004E0C3C /* SUGuidedPackageInstaller.h */; };
 		767B61AD1972D488004E0C3C /* SUGuidedPackageInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 767B61AB1972D488004E0C3C /* SUGuidedPackageInstaller.m */; };
 		767B61AE1972D488004E0C3C /* SUGuidedPackageInstaller.m in Sources */ = {isa = PBXBuildFile; fileRef = 767B61AB1972D488004E0C3C /* SUGuidedPackageInstaller.m */; };
-		AE21409A1BA20AD300D7593B /* MMMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE2140971BA20ABC00D7593B /* MMMarkdown.framework */; };
+		AE1C52891C15BF8400C7D068 /* marked.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AE1C52881C15BF8400C7D068 /* marked.min.js */; };
 		F8761EB11ADC5068000C9034 /* SUCodeSigningVerifierTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F8761EB01ADC5068000C9034 /* SUCodeSigningVerifierTest.m */; };
 		F8761EB31ADC50EB000C9034 /* SparkleTestCodeSignApp.zip in Resources */ = {isa = PBXBuildFile; fileRef = F8761EB21ADC50EB000C9034 /* SparkleTestCodeSignApp.zip */; };
 		F8761EB61ADC5E7A000C9034 /* SUCodeSigningVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B078CD15A5FB6100600039 /* SUCodeSigningVerifier.m */; };
@@ -275,20 +275,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = Sparkle;
-		};
-		AE21408F1BA20ABC00D7593B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE2140141BA20ABC00D7593B /* mmmarkdown.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BED761E11B377D4100687B36;
-			remoteInfo = mmmarkdown;
-		};
-		AE2140961BA20ABC00D7593B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AE2140181BA20ABC00D7593B /* MMMarkdown.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BED761571B374D6700687B36;
-			remoteInfo = "MMMarkdown (OS X)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -574,122 +560,7 @@
 		8DC2EF5A0486A6940098B216 /* Sparkle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sparkle-Info.plist"; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* Sparkle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sparkle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE03CFB21BA7181D00972C24 /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
-		AE2140101BA20ABC00D7593B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		AE2140121BA20ABC00D7593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE2140131BA20ABC00D7593B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AE2140141BA20ABC00D7593B /* mmmarkdown.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = mmmarkdown.xcodeproj; sourceTree = "<group>"; };
-		AE2140171BA20ABC00D7593B /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
-		AE2140181BA20ABC00D7593B /* MMMarkdown.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MMMarkdown.xcodeproj; sourceTree = "<group>"; };
-		AE21401B1BA20ABC00D7593B /* MMMarkdown.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = MMMarkdown.xcworkspace; sourceTree = "<group>"; };
-		AE21401C1BA20ABC00D7593B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		AE21401D1BA20ABC00D7593B /* RELEASE_NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RELEASE_NOTES.md; sourceTree = "<group>"; };
-		AE21401F1BA20ABC00D7593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE2140201BA20ABC00D7593B /* MMDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDocument.h; sourceTree = "<group>"; };
-		AE2140211BA20ABC00D7593B /* MMDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMDocument.m; sourceTree = "<group>"; };
-		AE2140221BA20ABC00D7593B /* MMDocument_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDocument_Private.h; sourceTree = "<group>"; };
-		AE2140231BA20ABC00D7593B /* MMElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMElement.h; sourceTree = "<group>"; };
-		AE2140241BA20ABC00D7593B /* MMElement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMElement.m; sourceTree = "<group>"; };
-		AE2140251BA20ABC00D7593B /* MMGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMGenerator.h; sourceTree = "<group>"; };
-		AE2140261BA20ABC00D7593B /* MMGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMGenerator.m; sourceTree = "<group>"; };
-		AE2140271BA20ABC00D7593B /* MMHTMLParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMHTMLParser.h; sourceTree = "<group>"; };
-		AE2140281BA20ABC00D7593B /* MMHTMLParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMHTMLParser.m; sourceTree = "<group>"; };
-		AE2140291BA20ABC00D7593B /* MMMarkdown-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMMarkdown-Prefix.pch"; sourceTree = "<group>"; };
-		AE21402A1BA20ABC00D7593B /* MMMarkdown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMMarkdown.h; sourceTree = "<group>"; };
-		AE21402B1BA20ABC00D7593B /* MMMarkdown.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMMarkdown.m; sourceTree = "<group>"; };
-		AE21402C1BA20ABC00D7593B /* MMParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMParser.h; sourceTree = "<group>"; };
-		AE21402D1BA20ABC00D7593B /* MMParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMParser.m; sourceTree = "<group>"; };
-		AE21402E1BA20ABC00D7593B /* MMScanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMScanner.h; sourceTree = "<group>"; };
-		AE21402F1BA20ABC00D7593B /* MMScanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMScanner.m; sourceTree = "<group>"; };
-		AE2140301BA20ABC00D7593B /* MMSpanParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMSpanParser.h; sourceTree = "<group>"; };
-		AE2140311BA20ABC00D7593B /* MMSpanParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMSpanParser.m; sourceTree = "<group>"; };
-		AE2140331BA20ABC00D7593B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE2140351BA20ABC00D7593B /* MarkdownTest.pl */ = {isa = PBXFileReference; lastKnownFileType = text.script.perl; path = MarkdownTest.pl; sourceTree = "<group>"; };
-		AE2140371BA20ABC00D7593B /* Amps and angle encoding.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Amps and angle encoding.html"; sourceTree = "<group>"; };
-		AE2140381BA20ABC00D7593B /* Amps and angle encoding.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Amps and angle encoding.text"; sourceTree = "<group>"; };
-		AE2140391BA20ABC00D7593B /* Auto links.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Auto links.html"; sourceTree = "<group>"; };
-		AE21403A1BA20ABC00D7593B /* Auto links.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Auto links.text"; sourceTree = "<group>"; };
-		AE21403B1BA20ABC00D7593B /* Backslash escapes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Backslash escapes.html"; sourceTree = "<group>"; };
-		AE21403C1BA20ABC00D7593B /* Backslash escapes.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Backslash escapes.text"; sourceTree = "<group>"; };
-		AE21403D1BA20ABC00D7593B /* Blockquotes with code blocks.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Blockquotes with code blocks.html"; sourceTree = "<group>"; };
-		AE21403E1BA20ABC00D7593B /* Blockquotes with code blocks.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Blockquotes with code blocks.text"; sourceTree = "<group>"; };
-		AE21403F1BA20ABC00D7593B /* Hard-wrapped paragraphs with list-like lines.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Hard-wrapped paragraphs with list-like lines.html"; sourceTree = "<group>"; };
-		AE2140401BA20ABC00D7593B /* Hard-wrapped paragraphs with list-like lines.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Hard-wrapped paragraphs with list-like lines.text"; sourceTree = "<group>"; };
-		AE2140411BA20ABC00D7593B /* Horizontal rules.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Horizontal rules.html"; sourceTree = "<group>"; };
-		AE2140421BA20ABC00D7593B /* Horizontal rules.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Horizontal rules.text"; sourceTree = "<group>"; };
-		AE2140431BA20ABC00D7593B /* Inline HTML (Advanced).html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Inline HTML (Advanced).html"; sourceTree = "<group>"; };
-		AE2140441BA20ABC00D7593B /* Inline HTML (Advanced).text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Inline HTML (Advanced).text"; sourceTree = "<group>"; };
-		AE2140451BA20ABC00D7593B /* Inline HTML (Simple).html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Inline HTML (Simple).html"; sourceTree = "<group>"; };
-		AE2140461BA20ABC00D7593B /* Inline HTML (Simple).text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Inline HTML (Simple).text"; sourceTree = "<group>"; };
-		AE2140471BA20ABC00D7593B /* Inline HTML comments.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Inline HTML comments.html"; sourceTree = "<group>"; };
-		AE2140481BA20ABC00D7593B /* Inline HTML comments.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Inline HTML comments.text"; sourceTree = "<group>"; };
-		AE2140491BA20ABC00D7593B /* Links, inline style.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Links, inline style.html"; sourceTree = "<group>"; };
-		AE21404A1BA20ABC00D7593B /* Links, inline style.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Links, inline style.text"; sourceTree = "<group>"; };
-		AE21404B1BA20ABC00D7593B /* Links, reference style.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Links, reference style.html"; sourceTree = "<group>"; };
-		AE21404C1BA20ABC00D7593B /* Links, reference style.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Links, reference style.text"; sourceTree = "<group>"; };
-		AE21404D1BA20ABC00D7593B /* Literal quotes in titles.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Literal quotes in titles.html"; sourceTree = "<group>"; };
-		AE21404E1BA20ABC00D7593B /* Literal quotes in titles.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Literal quotes in titles.text"; sourceTree = "<group>"; };
-		AE21404F1BA20ABC00D7593B /* Markdown Documentation - Basics.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Markdown Documentation - Basics.html"; sourceTree = "<group>"; };
-		AE2140501BA20ABC00D7593B /* Markdown Documentation - Basics.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Markdown Documentation - Basics.text"; sourceTree = "<group>"; };
-		AE2140511BA20ABC00D7593B /* Markdown Documentation - Syntax.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Markdown Documentation - Syntax.html"; sourceTree = "<group>"; };
-		AE2140521BA20ABC00D7593B /* Markdown Documentation - Syntax.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Markdown Documentation - Syntax.text"; sourceTree = "<group>"; };
-		AE2140531BA20ABC00D7593B /* Nested blockquotes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Nested blockquotes.html"; sourceTree = "<group>"; };
-		AE2140541BA20ABC00D7593B /* Nested blockquotes.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Nested blockquotes.text"; sourceTree = "<group>"; };
-		AE2140551BA20ABC00D7593B /* Ordered and unordered lists.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Ordered and unordered lists.html"; sourceTree = "<group>"; };
-		AE2140561BA20ABC00D7593B /* Ordered and unordered lists.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Ordered and unordered lists.text"; sourceTree = "<group>"; };
-		AE2140571BA20ABC00D7593B /* Strong and em together.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Strong and em together.html"; sourceTree = "<group>"; };
-		AE2140581BA20ABC00D7593B /* Strong and em together.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Strong and em together.text"; sourceTree = "<group>"; };
-		AE2140591BA20ABC00D7593B /* Tabs.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Tabs.html; sourceTree = "<group>"; };
-		AE21405A1BA20ABC00D7593B /* Tabs.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tabs.text; sourceTree = "<group>"; };
-		AE21405B1BA20ABC00D7593B /* Tidyness.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Tidyness.html; sourceTree = "<group>"; };
-		AE21405C1BA20ABC00D7593B /* Tidyness.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Tidyness.text; sourceTree = "<group>"; };
-		AE21405D1BA20ABC00D7593B /* MMBlockTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMBlockTests.m; sourceTree = "<group>"; };
-		AE21405E1BA20ABC00D7593B /* MMErrorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMErrorTests.m; sourceTree = "<group>"; };
-		AE21405F1BA20ABC00D7593B /* MMEscapingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMEscapingTests.m; sourceTree = "<group>"; };
-		AE2140601BA20ABC00D7593B /* MMExtensionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMExtensionTests.m; sourceTree = "<group>"; };
-		AE2140611BA20ABC00D7593B /* MMHTMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMHTMLTests.m; sourceTree = "<group>"; };
-		AE2140621BA20ABC00D7593B /* MMImageTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMImageTests.m; sourceTree = "<group>"; };
-		AE2140631BA20ABC00D7593B /* MMLinkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMLinkTests.m; sourceTree = "<group>"; };
-		AE2140641BA20ABC00D7593B /* MMListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMListTests.m; sourceTree = "<group>"; };
-		AE2140651BA20ABC00D7593B /* MMMarkdownTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMMarkdownTests.h; sourceTree = "<group>"; };
-		AE2140661BA20ABC00D7593B /* MMMarkdownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMMarkdownTests.m; sourceTree = "<group>"; };
-		AE2140671BA20ABC00D7593B /* MMPHPMarkdownTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMPHPMarkdownTests.m; sourceTree = "<group>"; };
-		AE2140681BA20ABC00D7593B /* MMSpanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMSpanTests.m; sourceTree = "<group>"; };
-		AE2140691BA20ABC00D7593B /* MMTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMTestCase.h; sourceTree = "<group>"; };
-		AE21406A1BA20ABC00D7593B /* MMTestCase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MMTestCase.m; sourceTree = "<group>"; };
-		AE21406C1BA20ABC00D7593B /* Backslash escapes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Backslash escapes.html"; sourceTree = "<group>"; };
-		AE21406D1BA20ABC00D7593B /* Backslash escapes.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Backslash escapes.text"; sourceTree = "<group>"; };
-		AE21406E1BA20ABC00D7593B /* Code block in a list item.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Code block in a list item.html"; sourceTree = "<group>"; };
-		AE21406F1BA20ABC00D7593B /* Code block in a list item.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Code block in a list item.text"; sourceTree = "<group>"; };
-		AE2140701BA20ABC00D7593B /* Code Spans.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Code Spans.html"; sourceTree = "<group>"; };
-		AE2140711BA20ABC00D7593B /* Code Spans.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Code Spans.text"; sourceTree = "<group>"; };
-		AE2140721BA20ABC00D7593B /* Email auto links.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Email auto links.html"; sourceTree = "<group>"; };
-		AE2140731BA20ABC00D7593B /* Email auto links.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Email auto links.text"; sourceTree = "<group>"; };
-		AE2140741BA20ABC00D7593B /* Emphasis.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Emphasis.html; sourceTree = "<group>"; };
-		AE2140751BA20ABC00D7593B /* Emphasis.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Emphasis.text; sourceTree = "<group>"; };
-		AE2140761BA20ABC00D7593B /* Headers.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Headers.html; sourceTree = "<group>"; };
-		AE2140771BA20ABC00D7593B /* Headers.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Headers.text; sourceTree = "<group>"; };
-		AE2140781BA20ABC00D7593B /* Images (Untitled).html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Images (Untitled).html"; sourceTree = "<group>"; };
-		AE2140791BA20ABC00D7593B /* Images (Untitled).text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Images (Untitled).text"; sourceTree = "<group>"; };
-		AE21407A1BA20ABC00D7593B /* Inline HTML (Simple).html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Inline HTML (Simple).html"; sourceTree = "<group>"; };
-		AE21407B1BA20ABC00D7593B /* Inline HTML (Simple).text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Inline HTML (Simple).text"; sourceTree = "<group>"; };
-		AE21407C1BA20ABC00D7593B /* Inline HTML (Span).html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Inline HTML (Span).html"; sourceTree = "<group>"; };
-		AE21407D1BA20ABC00D7593B /* Inline HTML (Span).text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Inline HTML (Span).text"; sourceTree = "<group>"; };
-		AE21407E1BA20ABC00D7593B /* Inline HTML comments.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Inline HTML comments.html"; sourceTree = "<group>"; };
-		AE21407F1BA20ABC00D7593B /* Inline HTML comments.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Inline HTML comments.text"; sourceTree = "<group>"; };
-		AE2140801BA20ABC00D7593B /* Ins & del.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Ins & del.html"; sourceTree = "<group>"; };
-		AE2140811BA20ABC00D7593B /* Ins & del.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Ins & del.text"; sourceTree = "<group>"; };
-		AE2140821BA20ABC00D7593B /* Links, inline style.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Links, inline style.html"; sourceTree = "<group>"; };
-		AE2140831BA20ABC00D7593B /* Links, inline style.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Links, inline style.text"; sourceTree = "<group>"; };
-		AE2140841BA20ABC00D7593B /* MD5 Hashes.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "MD5 Hashes.html"; sourceTree = "<group>"; };
-		AE2140851BA20ABC00D7593B /* MD5 Hashes.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "MD5 Hashes.text"; sourceTree = "<group>"; };
-		AE2140861BA20ABC00D7593B /* Nesting.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = Nesting.html; sourceTree = "<group>"; };
-		AE2140871BA20ABC00D7593B /* Nesting.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Nesting.text; sourceTree = "<group>"; };
-		AE2140881BA20ABC00D7593B /* Parens in URL.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Parens in URL.html"; sourceTree = "<group>"; };
-		AE2140891BA20ABC00D7593B /* Parens in URL.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Parens in URL.text"; sourceTree = "<group>"; };
-		AE21408A1BA20ABC00D7593B /* PHP-Specific Bugs.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "PHP-Specific Bugs.html"; sourceTree = "<group>"; };
-		AE21408B1BA20ABC00D7593B /* PHP-Specific Bugs.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "PHP-Specific Bugs.text"; sourceTree = "<group>"; };
-		AE21408C1BA20ABC00D7593B /* Tight blocks.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "Tight blocks.html"; sourceTree = "<group>"; };
-		AE21408D1BA20ABC00D7593B /* Tight blocks.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Tight blocks.text"; sourceTree = "<group>"; };
+		AE1C52881C15BF8400C7D068 /* marked.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = marked.min.js; sourceTree = "<group>"; };
 		F8761EB01ADC5068000C9034 /* SUCodeSigningVerifierTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUCodeSigningVerifierTest.m; sourceTree = "<group>"; };
 		F8761EB21ADC50EB000C9034 /* SparkleTestCodeSignApp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = SparkleTestCodeSignApp.zip; sourceTree = "<group>"; };
 		FA1941CA0D94A70100DD942E /* ConfigFrameworkDebug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = ConfigFrameworkDebug.xcconfig; sourceTree = "<group>"; };
@@ -762,7 +633,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE21409A1BA20AD300D7593B /* MMMarkdown.framework in Frameworks */,
 				1495006E195FCE1100BC5B5B /* AppKit.framework in Frameworks */,
 				1495006F195FCE1800BC5B5B /* Foundation.framework in Frameworks */,
 				61177A1F0D1112E900749C97 /* IOKit.framework in Frameworks */,
@@ -852,7 +722,7 @@
 		14732BB51960ECBA00593899 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
-				AE21400F1BA20ABC00D7593B /* MMMarkdown */,
+				AE1C52881C15BF8400C7D068 /* marked.min.js */,
 				14732BB61960ECE800593899 /* bsdiff */,
 				14732BB71960ECF000593899 /* CocoatechCore */,
 			);
@@ -1112,193 +982,6 @@
 				6158A1C4137904B300487EC1 /* SUUpdater_Private.h */,
 			);
 			name = "Update Control";
-			sourceTree = "<group>";
-		};
-		AE21400F1BA20ABC00D7593B /* MMMarkdown */ = {
-			isa = PBXGroup;
-			children = (
-				AE2140101BA20ABC00D7593B /* .gitignore */,
-				AE2140111BA20ABC00D7593B /* CLI */,
-				AE2140171BA20ABC00D7593B /* LICENSE.md */,
-				AE2140181BA20ABC00D7593B /* MMMarkdown.xcodeproj */,
-				AE21401B1BA20ABC00D7593B /* MMMarkdown.xcworkspace */,
-				AE21401C1BA20ABC00D7593B /* README.md */,
-				AE21401D1BA20ABC00D7593B /* RELEASE_NOTES.md */,
-				AE21401E1BA20ABC00D7593B /* Source */,
-				AE2140321BA20ABC00D7593B /* Tests */,
-			);
-			path = MMMarkdown;
-			sourceTree = "<group>";
-		};
-		AE2140111BA20ABC00D7593B /* CLI */ = {
-			isa = PBXGroup;
-			children = (
-				AE2140121BA20ABC00D7593B /* Info.plist */,
-				AE2140131BA20ABC00D7593B /* main.m */,
-				AE2140141BA20ABC00D7593B /* mmmarkdown.xcodeproj */,
-			);
-			path = CLI;
-			sourceTree = "<group>";
-		};
-		AE2140151BA20ABC00D7593B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AE2140901BA20ABC00D7593B /* mmmarkdown.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		AE2140191BA20ABC00D7593B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AE2140971BA20ABC00D7593B /* MMMarkdown.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		AE21401E1BA20ABC00D7593B /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				AE21401F1BA20ABC00D7593B /* Info.plist */,
-				AE2140201BA20ABC00D7593B /* MMDocument.h */,
-				AE2140211BA20ABC00D7593B /* MMDocument.m */,
-				AE2140221BA20ABC00D7593B /* MMDocument_Private.h */,
-				AE2140231BA20ABC00D7593B /* MMElement.h */,
-				AE2140241BA20ABC00D7593B /* MMElement.m */,
-				AE2140251BA20ABC00D7593B /* MMGenerator.h */,
-				AE2140261BA20ABC00D7593B /* MMGenerator.m */,
-				AE2140271BA20ABC00D7593B /* MMHTMLParser.h */,
-				AE2140281BA20ABC00D7593B /* MMHTMLParser.m */,
-				AE2140291BA20ABC00D7593B /* MMMarkdown-Prefix.pch */,
-				AE21402A1BA20ABC00D7593B /* MMMarkdown.h */,
-				AE21402B1BA20ABC00D7593B /* MMMarkdown.m */,
-				AE21402C1BA20ABC00D7593B /* MMParser.h */,
-				AE21402D1BA20ABC00D7593B /* MMParser.m */,
-				AE21402E1BA20ABC00D7593B /* MMScanner.h */,
-				AE21402F1BA20ABC00D7593B /* MMScanner.m */,
-				AE2140301BA20ABC00D7593B /* MMSpanParser.h */,
-				AE2140311BA20ABC00D7593B /* MMSpanParser.m */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		AE2140321BA20ABC00D7593B /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				AE2140331BA20ABC00D7593B /* Info.plist */,
-				AE2140341BA20ABC00D7593B /* MarkdownTest_1.0 */,
-				AE21405D1BA20ABC00D7593B /* MMBlockTests.m */,
-				AE21405E1BA20ABC00D7593B /* MMErrorTests.m */,
-				AE21405F1BA20ABC00D7593B /* MMEscapingTests.m */,
-				AE2140601BA20ABC00D7593B /* MMExtensionTests.m */,
-				AE2140611BA20ABC00D7593B /* MMHTMLTests.m */,
-				AE2140621BA20ABC00D7593B /* MMImageTests.m */,
-				AE2140631BA20ABC00D7593B /* MMLinkTests.m */,
-				AE2140641BA20ABC00D7593B /* MMListTests.m */,
-				AE2140651BA20ABC00D7593B /* MMMarkdownTests.h */,
-				AE2140661BA20ABC00D7593B /* MMMarkdownTests.m */,
-				AE2140671BA20ABC00D7593B /* MMPHPMarkdownTests.m */,
-				AE2140681BA20ABC00D7593B /* MMSpanTests.m */,
-				AE2140691BA20ABC00D7593B /* MMTestCase.h */,
-				AE21406A1BA20ABC00D7593B /* MMTestCase.m */,
-				AE21406B1BA20ABC00D7593B /* php-markdown */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		AE2140341BA20ABC00D7593B /* MarkdownTest_1.0 */ = {
-			isa = PBXGroup;
-			children = (
-				AE2140351BA20ABC00D7593B /* MarkdownTest.pl */,
-				AE2140361BA20ABC00D7593B /* Tests */,
-			);
-			path = MarkdownTest_1.0;
-			sourceTree = "<group>";
-		};
-		AE2140361BA20ABC00D7593B /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				AE2140371BA20ABC00D7593B /* Amps and angle encoding.html */,
-				AE2140381BA20ABC00D7593B /* Amps and angle encoding.text */,
-				AE2140391BA20ABC00D7593B /* Auto links.html */,
-				AE21403A1BA20ABC00D7593B /* Auto links.text */,
-				AE21403B1BA20ABC00D7593B /* Backslash escapes.html */,
-				AE21403C1BA20ABC00D7593B /* Backslash escapes.text */,
-				AE21403D1BA20ABC00D7593B /* Blockquotes with code blocks.html */,
-				AE21403E1BA20ABC00D7593B /* Blockquotes with code blocks.text */,
-				AE21403F1BA20ABC00D7593B /* Hard-wrapped paragraphs with list-like lines.html */,
-				AE2140401BA20ABC00D7593B /* Hard-wrapped paragraphs with list-like lines.text */,
-				AE2140411BA20ABC00D7593B /* Horizontal rules.html */,
-				AE2140421BA20ABC00D7593B /* Horizontal rules.text */,
-				AE2140431BA20ABC00D7593B /* Inline HTML (Advanced).html */,
-				AE2140441BA20ABC00D7593B /* Inline HTML (Advanced).text */,
-				AE2140451BA20ABC00D7593B /* Inline HTML (Simple).html */,
-				AE2140461BA20ABC00D7593B /* Inline HTML (Simple).text */,
-				AE2140471BA20ABC00D7593B /* Inline HTML comments.html */,
-				AE2140481BA20ABC00D7593B /* Inline HTML comments.text */,
-				AE2140491BA20ABC00D7593B /* Links, inline style.html */,
-				AE21404A1BA20ABC00D7593B /* Links, inline style.text */,
-				AE21404B1BA20ABC00D7593B /* Links, reference style.html */,
-				AE21404C1BA20ABC00D7593B /* Links, reference style.text */,
-				AE21404D1BA20ABC00D7593B /* Literal quotes in titles.html */,
-				AE21404E1BA20ABC00D7593B /* Literal quotes in titles.text */,
-				AE21404F1BA20ABC00D7593B /* Markdown Documentation - Basics.html */,
-				AE2140501BA20ABC00D7593B /* Markdown Documentation - Basics.text */,
-				AE2140511BA20ABC00D7593B /* Markdown Documentation - Syntax.html */,
-				AE2140521BA20ABC00D7593B /* Markdown Documentation - Syntax.text */,
-				AE2140531BA20ABC00D7593B /* Nested blockquotes.html */,
-				AE2140541BA20ABC00D7593B /* Nested blockquotes.text */,
-				AE2140551BA20ABC00D7593B /* Ordered and unordered lists.html */,
-				AE2140561BA20ABC00D7593B /* Ordered and unordered lists.text */,
-				AE2140571BA20ABC00D7593B /* Strong and em together.html */,
-				AE2140581BA20ABC00D7593B /* Strong and em together.text */,
-				AE2140591BA20ABC00D7593B /* Tabs.html */,
-				AE21405A1BA20ABC00D7593B /* Tabs.text */,
-				AE21405B1BA20ABC00D7593B /* Tidyness.html */,
-				AE21405C1BA20ABC00D7593B /* Tidyness.text */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		AE21406B1BA20ABC00D7593B /* php-markdown */ = {
-			isa = PBXGroup;
-			children = (
-				AE21406C1BA20ABC00D7593B /* Backslash escapes.html */,
-				AE21406D1BA20ABC00D7593B /* Backslash escapes.text */,
-				AE21406E1BA20ABC00D7593B /* Code block in a list item.html */,
-				AE21406F1BA20ABC00D7593B /* Code block in a list item.text */,
-				AE2140701BA20ABC00D7593B /* Code Spans.html */,
-				AE2140711BA20ABC00D7593B /* Code Spans.text */,
-				AE2140721BA20ABC00D7593B /* Email auto links.html */,
-				AE2140731BA20ABC00D7593B /* Email auto links.text */,
-				AE2140741BA20ABC00D7593B /* Emphasis.html */,
-				AE2140751BA20ABC00D7593B /* Emphasis.text */,
-				AE2140761BA20ABC00D7593B /* Headers.html */,
-				AE2140771BA20ABC00D7593B /* Headers.text */,
-				AE2140781BA20ABC00D7593B /* Images (Untitled).html */,
-				AE2140791BA20ABC00D7593B /* Images (Untitled).text */,
-				AE21407A1BA20ABC00D7593B /* Inline HTML (Simple).html */,
-				AE21407B1BA20ABC00D7593B /* Inline HTML (Simple).text */,
-				AE21407C1BA20ABC00D7593B /* Inline HTML (Span).html */,
-				AE21407D1BA20ABC00D7593B /* Inline HTML (Span).text */,
-				AE21407E1BA20ABC00D7593B /* Inline HTML comments.html */,
-				AE21407F1BA20ABC00D7593B /* Inline HTML comments.text */,
-				AE2140801BA20ABC00D7593B /* Ins & del.html */,
-				AE2140811BA20ABC00D7593B /* Ins & del.text */,
-				AE2140821BA20ABC00D7593B /* Links, inline style.html */,
-				AE2140831BA20ABC00D7593B /* Links, inline style.text */,
-				AE2140841BA20ABC00D7593B /* MD5 Hashes.html */,
-				AE2140851BA20ABC00D7593B /* MD5 Hashes.text */,
-				AE2140861BA20ABC00D7593B /* Nesting.html */,
-				AE2140871BA20ABC00D7593B /* Nesting.text */,
-				AE2140881BA20ABC00D7593B /* Parens in URL.html */,
-				AE2140891BA20ABC00D7593B /* Parens in URL.text */,
-				AE21408A1BA20ABC00D7593B /* PHP-Specific Bugs.html */,
-				AE21408B1BA20ABC00D7593B /* PHP-Specific Bugs.text */,
-				AE21408C1BA20ABC00D7593B /* Tight blocks.html */,
-				AE21408D1BA20ABC00D7593B /* Tight blocks.text */,
-			);
-			path = "php-markdown";
 			sourceTree = "<group>";
 		};
 		FA1941C40D94A6EA00DD942E /* Configurations */ = {
@@ -1582,16 +1265,6 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* Sparkle */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = AE2140151BA20ABC00D7593B /* Products */;
-					ProjectRef = AE2140141BA20ABC00D7593B /* mmmarkdown.xcodeproj */;
-				},
-				{
-					ProductGroup = AE2140191BA20ABC00D7593B /* Products */;
-					ProjectRef = AE2140181BA20ABC00D7593B /* MMMarkdown.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* Sparkle */,
@@ -1605,23 +1278,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		AE2140901BA20ABC00D7593B /* mmmarkdown.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = mmmarkdown.app;
-			remoteRef = AE21408F1BA20ABC00D7593B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		AE2140971BA20ABC00D7593B /* MMMarkdown.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MMMarkdown.framework;
-			remoteRef = AE2140961BA20ABC00D7593B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		14958C6D19AEBC890061B14F /* Resources */ = {
@@ -1667,6 +1323,7 @@
 				55C14BEF136EF21700649790 /* SUStatus.xib in Resources */,
 				55C14C04136EF26100649790 /* SUUpdateAlert.xib in Resources */,
 				55C14C19136EF2C700649790 /* SUUpdatePermissionPrompt.xib in Resources */,
+				AE1C52891C15BF8400C7D068 /* marked.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

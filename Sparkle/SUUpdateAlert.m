@@ -140,7 +140,27 @@
 	}
 	else
 	{
-        [[self.releaseNotesView mainFrame] loadHTMLString:[self.updateItem itemDescription] baseURL:nil];
+    
+    NSURL *bundleURL = [[NSBundle bundleForClass:[self class]] bundleURL];
+    
+    NSString *content = [self.updateItem itemDescription];
+    
+    NSString *html = [NSString stringWithFormat:@"<!doctype html>\n"
+                      "<html>\n"
+                      "<head>\n"
+                      "<meta charset=\"utf-8\"/>\n"
+                      "<title>Marked in the browser</title>\n"
+                      "<script src=\"Resources/marked.min.js\"></script>\n"
+                      "</head>\n"
+                      "<body>\n"
+                      "%@"
+                      "<script>\n"
+                      "document.getElementById('content').innerHTML = marked(document.getElementById('content').innerHTML);\n"
+                      "</script>\n"
+                      "</body>\n"
+                      "</html>\n", content];
+    
+      [[self.releaseNotesView mainFrame] loadHTMLString:html baseURL:bundleURL];
     }
 }
 
