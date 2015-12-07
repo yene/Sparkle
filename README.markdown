@@ -1,7 +1,5 @@
 # Sparkle for Github
-
-An easy-to-use software update framework for Cocoa developers on Github.
-
+An easy-to-use software update framework for OS X developers on Github.
 
 ![github](github.png)
 ![sign](sign.png)
@@ -14,6 +12,18 @@ An easy-to-use software update framework for Cocoa developers on Github.
 * Only uses code signing to check the identity, so you have to sign your binary.
 * No system profile can be sent.
 
+## How to release an update
+A quick guide:
+
+1. Increase *Version* number under General
+2. Commit all files
+3. Push master to Github
+4. In Xcode archive Version and Export a Developer ID-signed Application
+5. Zip the exported application
+6. On github create a new release with the same version
+7. Test update
+
+The *Build* version does not matter.
 
 ## Todo
 * add nice custom github style to the changelog window
